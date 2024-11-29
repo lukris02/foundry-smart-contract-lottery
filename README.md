@@ -1,66 +1,35 @@
-## Foundry
+# Proveably Random Raffle Contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Getting Started
 
-Foundry consists of:
+## Requirements
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [foundry](https://getfoundry.sh/)
 
-## Documentation
+## Quickstart
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```
+git clone https://github.com/lukris02/foundry-smart-contract-lottery
+cd foundry-smart-contract-lottery
+forge build
 ```
 
-### Test
+## Deploy
 
-```shell
-$ forge test
+This will default to your local node. You need to have it running in another terminal in order for it to deploy.
+
+```
+make deploy
 ```
 
-### Format
+## Testing
 
-```shell
-$ forge fmt
 ```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
+forge test
 ```
+or
 
-### Anvil
-
-```shell
-$ anvil
 ```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+forge test --fork-url $SEPOLIA_RPC_URL
 ```
