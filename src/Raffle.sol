@@ -51,7 +51,6 @@ contract Raffle is VRFConsumerBaseV2Plus {
     }
 
     /* State Variables */
-
     uint16 private constant REQUEST_CONFIRMATIONS = 3;
     uint32 private constant NUM_WORDS = 1;
     uint256 private immutable i_entranceFee;
@@ -156,8 +155,8 @@ contract Raffle is VRFConsumerBaseV2Plus {
     }
 
     function fulfillRandomWords(
-        uint256 /* requestId */,
-        uint256[] calldata randomWords
+        uint256,
+        /* requestId */ uint256[] calldata randomWords
     ) internal override {
         // Checks
 
@@ -180,7 +179,6 @@ contract Raffle is VRFConsumerBaseV2Plus {
     /**
      * Getter Functions
      */
-
     function getEntranceFee() external view returns (uint256) {
         return i_entranceFee;
     }

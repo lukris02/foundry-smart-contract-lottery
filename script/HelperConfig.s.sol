@@ -41,9 +41,7 @@ contract HelperConfig is CodeConstants, Script {
         return getConfigByChainId(block.chainid);
     }
 
-    function getConfigByChainId(
-        uint256 chainId
-    ) public returns (NetworkConfig memory) {
+    function getConfigByChainId(uint256 chainId) public returns (NetworkConfig memory) {
         if (networkConfigs[chainId].vrfCoordinator != address(0)) {
             return networkConfigs[chainId];
         } else if (chainId == LOCAL_CHAIN_ID) {
@@ -53,11 +51,7 @@ contract HelperConfig is CodeConstants, Script {
         }
     }
 
-    function getSepoliaEthConfig()
-        public
-        pure
-        returns (NetworkConfig memory sepoliaNetworkConfig)
-    {
+    function getSepoliaEthConfig() public pure returns (NetworkConfig memory sepoliaNetworkConfig) {
         sepoliaNetworkConfig = NetworkConfig({
             entranceFee: 0.01 ether, // 1e16
             interval: 30, // 30 seconds
@@ -77,11 +71,8 @@ contract HelperConfig is CodeConstants, Script {
         }
 
         vm.startBroadcast();
-        VRFCoordinatorV2_5Mock vrfCoordinatorMock = new VRFCoordinatorV2_5Mock(
-            MOCK_BASE_FEE,
-            MOCK_GAS_PRICE_LINK,
-            MOCK_WEI_PER_UINT_LINK
-        );
+        VRFCoordinatorV2_5Mock vrfCoordinatorMock =
+            new VRFCoordinatorV2_5Mock(MOCK_BASE_FEE, MOCK_GAS_PRICE_LINK, MOCK_WEI_PER_UINT_LINK);
         LinkToken linkToken = new LinkToken();
         vm.stopBroadcast();
 
