@@ -1,5 +1,11 @@
 # Proveably Random Raffle Contracts
 
+## Description
+Verifiable random lottery contract. `Raffle.sol` contract allows for a fully automated lottery where users can buy a lottery ticket by entering a raffle. Functions like `checkUpkeep` and `performUpkeep` automate the lottery process, ensuring the system runs without manual intervention.
+
+## Topics
+Solidity, Foundry, Chainlink VRF v2.5, Chainlink Automation
+
 # Getting Started
 
 ## Requirements
